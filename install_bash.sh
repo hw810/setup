@@ -1,0 +1,1 @@
+cp -r bashrcs/* ~/.bash/
