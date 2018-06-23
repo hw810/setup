@@ -6,7 +6,7 @@ source ~/.vim/myconfig.vim
 
 
 mkdir -p ~/.vim
-[[ ! ~/.vim/bundle/Vundle.vim ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+[[ ! -e ~/.vim/bundle/Vundle.vim ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp -r vimrcs/* ~/.vim/
 
 

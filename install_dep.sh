@@ -1,6 +1,8 @@
 sudo yum groupinstall "Development Tools"
 sudo yum install ncurses-devel zlib-devel texinfo gtk+-devel gtk2-devel qt-devel tcl-devel tk-devel kernel-headers kernel-devel openssl-devel sqlite-devel readline-devel bzip2-devel libevent2-devel
 sudo yum install cmake boost-devel eigen3-devel xz-devel.x86_64  
+sudo yum install tree
+sudo yum install npm
 
 mkdir -p ~/setup
 
@@ -14,11 +16,10 @@ make install
 popd
 
 pushd ~/setup
-git clone git://git.code.sf.net/p/tmux/tmux-code tmux
-cd tmux
-sh autogen.sh
-./configure && make
-make install
+wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
+tar -zxvf tmux-2.6.tar.gz
+mkdir build && cd build && ../configure && make
+sudo make install
 popd
 
 

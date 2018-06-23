@@ -1,0 +1,7 @@
+
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+source ~/.bash/basic
+source ~/.bash/bash_prompt
