@@ -34,3 +34,24 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 " > /etc/yum.repos.d/mongodb-org-3.6.repo
 sudo yum install -y mongodb-org
+
+
+# install gcc
+
+pushd ~/setup
+GCC_VERSION=gcc-4.8.2
+sudo yum install glibc-devel.i686 glibc-i686
+# wget https://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.gz
+wget https://ftp.gnu.org/gnu/gcc/${GCC_VERSION}/${GCC_VERSION}.tar.gz
+tar xzf ${GCC_VERSION}.tar.gz
+cd ${GCC_VERSION}
+./contrib/download_prerequisites
+cd ..
+mkdir objdir
+cd objdir
+../configure --prefix=$HOME/gcc/${GCC_VERSION} --enable-languages=c,c++,fortran,go
+make
+make install
+popd
+
+
