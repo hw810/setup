@@ -38,6 +38,7 @@ Plugin 'vim-airline/vim-airline'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
+Plugin 'rking/ag.vim'
 
 
 
