@@ -14,13 +14,13 @@ cnoremap <c-g> <c-c>
 "" YouCompleteMe
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-let g:ycm_global_ycm_extra_conf = '/Users/hd/.vim_runtime/sources_non_forked/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '/Users/hd/.vim_runtime/sources_non_forked/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 " let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_python_binary_path = '/Users/hd/anaconda/bin/python'
+" let g:ycm_python_binary_path = '/Users/hd/anaconda/bin/python'
 
 " nnoremap <leader>, :YcmCompleter GoToDeclaration<CR>
-" nnoremap <leader>. :YcmCompleter GoToReferences<CR>
-nnoremap <leader>. :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>, :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>. :YcmCompleter GoToReferences<CR>
 
 "" tagbar
 " nnoremap <silent> <f9> :TagbarToggle<cr>
