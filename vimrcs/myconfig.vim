@@ -103,6 +103,8 @@ nmap <leader>d i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 nmap <leader>dd i<C-R>=strftime("%Y-%m-%d %a %H:%M")<CR><Esc>
 " imap <c-d>d <C-R>=strftime("%Y-%m-%d %a %H:%M")<CR>
 
+set fencs=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+
 onoremap ae :normal!0f=lv$h<cr>
 
 set background=dark
