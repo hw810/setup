@@ -16,9 +16,15 @@ mkdir -p $dir_build
 if [[ ${install_vim} == "1" ]]; then
     pushd $dir_build
     sudo yum -y install perl-devel perl-ExtUtils-Embed
+    if [[ ! -d vim ]]; then
     git clone https://github.com/vim/vim.git
-    ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes --enable-python3interp=yes --enable-perlinterp=yes --enable-luainterp=yes --enable-cscope --prefix=/usr/local
-    make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
+    fi
+    cd vim
+    ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes --enable-python3interp=yes --enable-perlinterp=yes --enable-luainterp=yes --enable-cscope --prefix=$HOME/usr
+    # make VIMRUNTIMEDIR=~/usr/local/share/vim/vim80
+    make 
+    make install
+    cd -
     popd
 fi
 
