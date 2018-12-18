@@ -1,5 +1,5 @@
-dir_setup=~/build
-dir_python=~/python/python365
+dir_setup=~/wanghuaidong/build
+dir_python=~/wanghuaidong/python/python365
 # mirror=http://mirrors.sohu.com
 mirror=http://npm.taobao.org/mirrors
 

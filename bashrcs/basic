@@ -1,3 +1,4 @@
 alias rm="rm -i"
+alias duall="du -sch .[!.]* * |sort -h"
 
 PATH=~/python/bin:$PATH
