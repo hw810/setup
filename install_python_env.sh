@@ -1,5 +1,5 @@
-dir_setup=~/wanghuaidong/build
-dir_python=~/wanghuaidong/python/python365
+dir_setup=~/local_build
+dir_python=~/python/python365
 # mirror=http://mirrors.sohu.com
 mirror=http://npm.taobao.org/mirrors
 
@@ -12,7 +12,7 @@ if [[ -d Python-${VERSION} ]]; then
 else
     tar -zxvf Python-$VERSION.tgz
     cd Python-$VERSION && mkdir build && cd build
-    ../configure --with-ensurepip=install --prefix=$dir_python
+    ../configure --enable-shared --with-ensurepip=install --prefix=$dir_python
     make
     make install
     popd

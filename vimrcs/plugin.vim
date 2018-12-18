@@ -32,10 +32,14 @@ Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
+Plugin 'rking/ag.vim'
+Plugin 'junegunn/vim-easy-align'
 
 
 

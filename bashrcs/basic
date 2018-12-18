@@ -1,4 +1,38 @@
 alias rm="rm -i"
 alias duall="du -sch .[!.]* * |sort -h"
 
+alias ll="ls -l --color --group-directories-first"
+
 PATH=~/python/bin:$PATH
+
+function gitdiff {
+    fname=$1
+    vimdiff <(git show HEAD:$fname) $fname
+}
+
+function svndiff {
+    vimdiff <(svn cat -r HEAD $1) $1
+}
+
+function svnprev {
+    local cur_version=$1
+    found=0
+    svn log | grep "^r" | while read line; do
+        if [[ $found == 1 ]]; then
+            echo ${line%% *}
+            exit 0
+        fi
+
+        if [[ ${line%% *} == $cur_version ]]; then
+            found=1
+        fi
+    done
+}
+
+function svndiffver {
+    local ver=$1
+    local fname=$2
+    
+    prev_ver=$(svnprev $ver)
+    vimdiff <(svn cat -r $prev_ver $fname) <(svn cat -r $ver $fname)
+}

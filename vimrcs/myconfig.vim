@@ -14,13 +14,13 @@ cnoremap <c-g> <c-c>
 "" YouCompleteMe
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-let g:ycm_global_ycm_extra_conf = '/Users/hd/.vim_runtime/sources_non_forked/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '/Users/hd/.vim_runtime/sources_non_forked/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 " let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_python_binary_path = '/Users/hd/anaconda/bin/python'
+" let g:ycm_python_binary_path = '/Users/hd/anaconda/bin/python'
 
 " nnoremap <leader>, :YcmCompleter GoToDeclaration<CR>
-" nnoremap <leader>. :YcmCompleter GoToReferences<CR>
-nnoremap <leader>. :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>, :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>. :YcmCompleter GoToReferences<CR>
 
 "" tagbar
 " nnoremap <silent> <f9> :TagbarToggle<cr>
@@ -103,9 +103,18 @@ nmap <leader>d i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 nmap <leader>dd i<C-R>=strftime("%Y-%m-%d %a %H:%M")<CR><Esc>
 " imap <c-d>d <C-R>=strftime("%Y-%m-%d %a %H:%M")<CR>
 
+set fencs=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+
 onoremap ae :normal!0f=lv$h<cr>
 
 set background=dark
 " colorscheme gruvbox
 " colorscheme molokai
 colorscheme solarized
+
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
