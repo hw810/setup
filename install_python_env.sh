@@ -1,3 +1,4 @@
+os=centos  # ubuntu or centos
 dir_setup=~/local_build
 dir_python=~/python/python365
 # mirror=http://mirrors.sohu.com
@@ -5,6 +6,13 @@ mirror=http://npm.taobao.org/mirrors
 
 VERSION=3.6.5
 # VERSION=2.7.8
+
+if [[ ${os} == "centos" ]]; then
+    sudo yum install libsqlite3-devel
+elif [[ ${os} == "ubuntu" ]]; then
+    sudo apt-get install libsqlite3-dev
+fi
+
 mkdir -p $dir_setup && pushd $dir_setup
 [[ ! -f Python-${VERSION}.tgz ]] && wget ${mirror}/python/${VERSION}/Python-${VERSION}.tgz
 if [[ -d Python-${VERSION} ]]; then
