@@ -73,7 +73,6 @@ if [[ ${install_gcc} == "1" ]]; then
     tar xzf ${GCC_VERSION}.tar.gz
     cd ${GCC_VERSION}
     ./contrib/download_prerequisites
-    cd ..
     mkdir objdir
     cd objdir
     ../configure --prefix=$HOME/gcc/${GCC_VERSION} --enable-languages=c,c++,fortran,go
