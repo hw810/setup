@@ -1,0 +1,2 @@
+# PROMPT_COMMAND='echo -ne "\033]0;10.21.32.218\007"'
+PROMPT_COMMAND='echo -ne "\033]0;$(hostname -i)\007"'
