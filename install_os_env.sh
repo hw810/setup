@@ -1,5 +1,5 @@
-install_vim=1
-install_tmux=0
+# install_vim=1
+install_tmux=1
 install_mongodb=0
 install_gcc=0
 
@@ -32,16 +32,21 @@ fi
 # tmux
 if [[ ${install_tmux} == "1" ]]; then
     pushd ${dir_build}
-    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-    tar xzvf libevent-2.0.21-stable.tar.gz
+    if [[ ! -f libevent-2.0.21-stable.tar.gz ]]; then
+        wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+        tar xzvf libevent-2.0.21-stable.tar.gz
+    fi
     cd libevent-2.0.21-stable
     ./configure && make
     make install
     popd
 
     pushd ${dir_build}
-    wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
-    tar -zxvf tmux-2.6.tar.gz
+    if [[ ! -f tmux-2.6.tar.gz ]];then
+        wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
+        tar -zxvf tmux-2.6.tar.gz
+    fi
+    cd tmux-2.6
     mkdir build && cd build && ../configure && make
     sudo make install
     popd
