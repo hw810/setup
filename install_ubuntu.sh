@@ -1,3 +1,4 @@
+install_build_tools=1
 install_tmux=1
 
 dir_third=$HOME/third
@@ -14,7 +15,19 @@ function download_if_needed {
     fi
 }
 
+if [[ ${install_dircolors}  == "1" ]]; then
+    mkdir ~/third && cd ~/third && git clone https://github.com/seebi/dircolors-solarized.git
+    echo "eval `dircolors /path/to/dircolorsdb`" >> ~/.bashrc
+fi
+
+if [[ ${install_build_tools} == "1" ]]; then
+    sudo apt install build-essential
+    sudo apt install autoconf automake libtool curl make g++ unzip
+    sudo apt install cmake
+fi
+
 if [[ ${install_tmux} == "1" ]]; then
+    sudo apt install ncurses-dev
     pushd ${dir_third}
     download_if_needed https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz ./
     tar xzvf libevent-2.0.21-stable.tar.gz
@@ -35,3 +48,4 @@ if [[ ${install_tmux} == "1" ]]; then
     make install
     popd
 fi
+
