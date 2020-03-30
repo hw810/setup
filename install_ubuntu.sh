@@ -1,5 +1,6 @@
-install_build_tools=1
-install_tmux=1
+install_build_tools=0
+install_tmux=0
+install_dircolors=1
 
 dir_third=$HOME/third
 mkdir -p ${dir_third}
@@ -16,8 +17,8 @@ function download_if_needed {
 }
 
 if [[ ${install_dircolors}  == "1" ]]; then
-    mkdir ~/third && cd ~/third && git clone https://github.com/seebi/dircolors-solarized.git
-    echo "eval `dircolors /path/to/dircolorsdb`" >> ~/.bashrc
+    mkdir -p ~/third && cd ~/third && git clone https://github.com/seebi/dircolors-solarized.git
+    echo "eval \`dircolors ~/third/dircolors-solarized/dircolors.256dark\`" >> ~/.bashrc
 fi
 
 if [[ ${install_build_tools} == "1" ]]; then

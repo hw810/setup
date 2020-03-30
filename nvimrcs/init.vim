@@ -11,8 +11,7 @@ Plug 'preservim/nerdtree'
 
 call plug#end()
 
-source /home/wanghuaidong/wanghuaidong/.config/nvim/coc.vim
-source ~/.vim/basic.vim
-source ~/.vim/myconfig.vim
+source ~/.config/nvim/coc.vim
+source ~/.config/nvim/basic.vim
 source ~/.config/nvim/myconfig.vim
 
