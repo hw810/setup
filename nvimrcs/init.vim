@@ -7,8 +7,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
-" Plug 'scrooloose/nerdtree.git'
 Plug 'preservim/nerdtree'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
