@@ -107,6 +107,7 @@ set fencs=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 onoremap ae :normal!0f=lv$h<cr>
 
+let g:gruvbox_contrast_dark = 'soft'
 set background=dark
 " colorscheme gruvbox
 " colorscheme molokai
