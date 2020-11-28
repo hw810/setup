@@ -1,5 +1,13 @@
 {
     "languageserver": {
+        "golang": {
+              "command": "gopls",
+              "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+              "filetypes": ["go"],
+              "initializationOptions": {
+                "usePlaceholders": true
+              }
+          },
         "ccls": {
             "command": "ccls",
             "filetypes": [
@@ -18,10 +26,12 @@
             "initializationOptions": {
                 "cache": {
                     "directory": "/tmp/ccls"
-                }
+                },
+                "highlight": { "lsRanges" : true }
             }
         }
     },
 
     "python.jediEnabled": false
+
 }

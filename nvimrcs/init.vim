@@ -9,6 +9,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
